@@ -31,8 +31,15 @@ function Sidebar() {
 
   return (
     <aside className="w-72 bg-zinc-950 p-6">
+      {/*  */}
+      <div className="flex items-center gap-2">
+        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+      </div>
+
       {/* Barra de navegação */}
-      <nav className="space-y-5">
+      <nav className="space-y-5 mt-10">
         {/* Iteração para gerar os links */}
         {navList.map((link) => (
           <NavLink Icon={link.Icon} text={link.text} link={link.link} />
