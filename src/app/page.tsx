@@ -16,17 +16,17 @@ export default function Home() {
         {/*
          * - `w-`: largura (width)
          */}
-        <aside className="w-64 bg-zinc-950">sidebar</aside>
+        <aside className="w-64 bg-zinc-950 p-6">sidebar</aside>
 
         {/* Conteúdo principal (músicas) */}
         {/*
          * - `flex-1`: ocupar o espaço restante dentro da flexbox
          */}
-        <main className="flex-1">main</main>
+        <main className="flex-1 p-6">main</main>
       </div>
 
       {/* Barra do player */}
-      <footer className="bg-zinc-800 border-t border-zinc-700 px-6">footer</footer>
+      <footer className="bg-zinc-800 border-t border-zinc-700 px-6 p-6">footer</footer>
     </div>
   )
 }
