@@ -1,5 +1,5 @@
 // importação de componentes
-import NavButtons from "./NavButtons"
+import NavButtons from "../components/NavButtons"
 
 /** Componente da área principal. */
 export default function Main() {

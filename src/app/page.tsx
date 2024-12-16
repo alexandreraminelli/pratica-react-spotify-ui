@@ -1,6 +1,6 @@
 // importação dos componentes
-import Sidebar from "./components/Sidebar"
-import Main from "./components/Main"
+import Sidebar from "./layout/Sidebar"
+import Main from "./layout/Main"
 
 /** Componente da página inicial do Spotify. */
 export default function Home() {
