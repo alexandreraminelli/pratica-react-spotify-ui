@@ -23,11 +23,13 @@ export default function Home() {
 /** Componente da sidebar. */
 function Sidebar() {
   /** Lista de links do navbar. */
-  const navList: NavLinkProps[] = [
+  const mainNav: NavLinkProps[] = [
     { Icon: HomeIcon, text: "Home" },
     { Icon: SearchIcon, text: "Search" },
     { Icon: LibraryIcon, text: "Your Library" },
   ]
+  /** Lista de playlists. */
+  const playlistList: NavLinkProps[] = [{ text: "Playlist 1" }, { text: "Playlist 2" }, { text: "Playlist 3" }, { text: "Playlist 4" }, { text: "Playlist 5" }, { text: "Playlist 6" }]
 
   return (
     <aside className="w-72 bg-zinc-950 p-6">
@@ -38,11 +40,18 @@ function Sidebar() {
         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
       </div>
 
-      {/* Barra de navegação */}
+      {/* Nav principal */}
       <nav className="space-y-5 mt-10">
         {/* Iteração para gerar os links */}
-        {navList.map((link) => (
+        {mainNav.map((link) => (
           <NavLink Icon={link.Icon} text={link.text} link={link.link} />
+        ))}
+      </nav>
+
+      {/* Nav de playlists */}
+      <nav className="mt-6 pt-10 border-t border-zinc-800 flex flex-col gap-2">
+        {playlistList.map((playlist) => (
+          <NavLink text={playlist.text} className="text-sm text-zinc-400" />
         ))}
       </nav>
     </aside>
@@ -51,23 +60,25 @@ function Sidebar() {
 
 /** Interface dos props do componente `NavLink`. */
 interface NavLinkProps {
-  /** Ícone do link. */
-  Icon: React.ComponentType
+  /** Ícone do link. (opcional) */
+  Icon?: React.ComponentType
   /** Texto do link. */
   text: string
   /** Endereço do link. */
   link?: string
+  /** Classes personalizadas. (opcional) */
+  className?: string
 }
 
 /** Componente do link do navbar. */
-function NavLink({ Icon, text, link = "" }: NavLinkProps) {
+function NavLink({ Icon, text, link = "", className }: NavLinkProps) {
   return (
     <a
       href={link} // Endereço
       // Classes CSS:
-      className="flex items-center gap-3 text-sm font-semibold text-zinc-200"
+      className={`flex items-center gap-3 text-sm font-semibold text-zinc-200 ${className}`}
     >
-      <Icon /> {/* Ícone */}
+      {Icon && <Icon />} {/* Ícone */}
       {text} {/* Texto */}
     </a>
   )
