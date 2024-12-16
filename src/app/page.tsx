@@ -49,9 +49,9 @@ function Sidebar() {
       </nav>
 
       {/* Nav de playlists */}
-      <nav className="mt-6 pt-10 border-t border-zinc-800 flex flex-col gap-2">
+      <nav className="mt-6 pt-10 border-t border-zinc-800 flex flex-col gap-3">
         {playlistList.map((playlist) => (
-          <NavLink text={playlist.text} className="text-sm text-zinc-400" />
+          <NavLink text={playlist.text} className="text-sm text-zinc-400 hover:text-zinc-100" />
         ))}
       </nav>
     </aside>
