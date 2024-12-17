@@ -3,12 +3,12 @@ import Image, { StaticImageData } from "next/image"
 // importação das imagens
 import placeholder from "../../../public/playlistCovers/placeholder.jpeg"
 // importação de ícones
-import { PlayIcon, RepeatIcon, ShuffleIcon, SkipBackIcon, SkipForwardIcon } from "lucide-react"
+import { Icon, LayoutListIcon, Maximize2Icon, Mic2Icon, PlayIcon, RepeatIcon, ShuffleIcon, SkipBackIcon, SkipForwardIcon, VolumeIcon } from "lucide-react"
 
 /** Componente dos controles de players exibido no canto inferior da tela. */
 export default function PlayerControl() {
   return (
-    <footer className="bg-zinc-800 border-t border-zinc-700 px-6 p-6 flex items-center justify-between">
+    <footer className="bg-zinc-800 border-t border-zinc-700 px-6 py-4 p-6 flex items-center justify-between">
       {/* Música que está tocando */}
       <MusicInfo music="Music" artist="Artist" />
 
@@ -117,5 +117,23 @@ function TimerText({ timer }: TimerTextProps) {
 
 /** Componente dos botões auxiliares */
 function AuxiliaryButtons() {
-  return <aside></aside>
+  return (
+    <aside className="flex items-center gap-3">
+      {/* Botão de microfone */}
+      <IconButton Icon={Mic2Icon} />
+      {/* Botão de playlist */}
+      <IconButton Icon={LayoutListIcon} />
+      {/* Botão de volume */}
+      <div className="flex flex-row items-center">
+        {/* Ícone de volume */}
+        <IconButton Icon={VolumeIcon} />
+        <div className="h-1 w-24 rounded-full  bg-zinc-600">
+          {/* Valor */}
+          <div className="bg-zinc-200 w-20 h-1 rounded-full"></div>
+        </div>
+      </div>
+      {/*  */}
+      <IconButton Icon={Maximize2Icon} />
+    </aside>
+  )
 }
