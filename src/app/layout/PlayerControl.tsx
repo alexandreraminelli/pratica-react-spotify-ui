@@ -36,7 +36,7 @@ function MusicInfo({ cover = placeholder, music, artist }: MusicInfoProps) {
   return (
     <div className="flex items-center gap-3">
       {/* Capa da música */}
-      <Image src={placeholder} width={size} height={size} alt="Capa da música" className="rounded" />
+      <Image src={cover} width={size} height={size} alt="Capa da música" className="rounded" />
       {/* Informações */}
       <div className="flex flex-col">
         {/* Nome da música */}
