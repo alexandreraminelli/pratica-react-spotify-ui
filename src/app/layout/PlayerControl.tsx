@@ -53,7 +53,7 @@ function MusicInfo({ cover = placeholder, music, artist }: MusicInfoProps) {
 /** Componente do controle principal. */
 function Control() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center gap-2">
       {/* Botões de controle */}
       <div className="flex items-center gap-6">
         {/* Botão aleatorizar */}
@@ -69,6 +69,8 @@ function Control() {
         {/* Botão loop */}
         <IconButton Icon={RepeatIcon} />
       </div>
+      {/* Slider */}
+      <Slider />
     </div>
   )
 }
@@ -85,6 +87,32 @@ interface IconButtonProps {
 /** Componente do botão de ícone. */
 function IconButton({ Icon }: IconButtonProps) {
   return <Icon size={20} className="text-zinc-200 cursor-pointer" />
+}
+
+/** Componente do slider. */
+function Slider() {
+  return (
+    <div className="flex items-center gap-2">
+      {/* Timer atual */}
+      <TimerText timer="0:31" />
+      {/* Slider */}
+      <div className="h-1 w-96 rounded-full  bg-zinc-600">
+        {/* Progresso */}
+        <div className="bg-zinc-200 w-40 h-1 rounded-full"></div>
+      </div>
+      {/* Timer total */}
+      <TimerText timer="2:14" />
+    </div>
+  )
+}
+/** Interface dos props do componente `TimerText`. */
+interface TimerTextProps {
+  /** Valor do time. */
+  timer: string
+}
+/** Componente do texto de timer. */
+function TimerText({ timer }: TimerTextProps) {
+  return <span className="text-xs text-zinc-400">{timer}</span>
 }
 
 /** Componente dos botões auxiliares */
