@@ -1,6 +1,7 @@
 // importação de componentes
 import NavButtons from "../components/NavButtons"
 import RecommendationGrid from "../components/RecommendationGrid"
+import MadeForSection from "../components/MadeForSection"
 
 /** Componente da área principal. */
 export default function Main() {
@@ -14,6 +15,9 @@ export default function Main() {
 
       {/* Grid de playlists recomendadas */}
       <RecommendationGrid />
+
+      {/* Seção Made For */}
+      <MadeForSection />
     </main>
   )
 }
