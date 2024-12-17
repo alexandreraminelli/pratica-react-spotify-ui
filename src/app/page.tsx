@@ -1,6 +1,7 @@
 // importação dos componentes
 import Sidebar from "./layout/Sidebar"
 import Main from "./layout/Main"
+import PlayerControl from "./layout/PlayerControl"
 
 /** Componente da página inicial do Spotify. */
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
       </div>
 
       {/* Barra do player */}
-      <footer className="bg-zinc-800 border-t border-zinc-700 px-6 p-6">footer</footer>
+      <PlayerControl />
     </div>
   )
 }
