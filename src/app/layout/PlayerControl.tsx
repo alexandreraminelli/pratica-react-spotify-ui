@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image"
 // importação das imagens
 import placeholder from "../../../public/playlistCovers/placeholder.jpeg"
 // importação de ícones
-import { Icon, LayoutListIcon, Maximize2Icon, Mic2Icon, PlayIcon, RepeatIcon, ShuffleIcon, SkipBackIcon, SkipForwardIcon, VolumeIcon } from "lucide-react"
+import { LayoutListIcon, Maximize2Icon, Mic2Icon, PlayIcon, RepeatIcon, ShuffleIcon, SkipBackIcon, SkipForwardIcon, VolumeIcon } from "lucide-react"
 
 /** Componente dos controles de players exibido no canto inferior da tela. */
 export default function PlayerControl() {
